@@ -10,6 +10,7 @@
     <label for="destination">Destination</label>
     <select id="destination" name="destination" required>
       <option>Where are you going?</option>
+      <option *ngFor="let destination of destinations">{{destination.destination}}</option>
     </select>
   </div>
   <button>Submit</button>
