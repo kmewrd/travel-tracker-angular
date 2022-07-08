@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-travel-tracker';
+  title = 'Travel Tracker';
+  travelerName = 'traveler';
+  spend = '$0.00';
 }
