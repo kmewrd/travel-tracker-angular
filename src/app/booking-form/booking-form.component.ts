@@ -16,14 +16,14 @@ interface DestinationInterface {
   styleUrls: ['./booking-form.component.scss']
 })
 export class BookingFormComponent implements OnInit {
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   destinations: DestinationInterface[] = [];
-  bookingForm = new FormGroup({
-    startDate: new FormControl(''),
-    duration: new FormControl(null),
-    num_guests: new FormControl(null),
-    destination: new FormControl('')
+  bookingForm: FormGroup = this.formBuilder.group({
+    startDate: [''],
+    duration: [null],
+    num_guests: [null],
+    destination: ['']
   });
 
   ngOnInit() {
