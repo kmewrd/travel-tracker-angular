@@ -1,17 +1,41 @@
-<form>
+<form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
   <h2>Book your next trip</h2>
-  <div>
-    <label for="start-date">Start date</label>
-    <input id="start-date" name="start-date" type="date" required/>
-    <label for="duration">Duration of stay</label>
-    <input id="duration" name="duration" type="number" min="1" required/>
-    <label for="guests">Number of guests</label>
-    <input id="guests" name="guests" type="number" min="1" required/>
-    <label for="destination">Destination</label>
-    <select id="destination" name="destination" required>
-      <option>Where are you going?</option>
-      <option *ngFor="let destination of destinations" [value]="destination.destination">{{destination.destination}}</option>
-    </select>
-  </div>
-  <button>Submit</button>
+
+  <label for="start-date">Start date</label>
+  <input
+    id="start-date"
+    name="start-date"
+    type="date"
+    formControlName="startDate"
+  />
+
+  <label for="duration">Duration of stay</label>
+  <input
+    id="duration"
+    name="duration"
+    type="number"
+    min="1"
+    formControlName="duration"
+  />
+
+  <label for="guests">Number of guests</label>
+  <input
+    id="guests"
+    name="guests"
+    type="number"
+    min="1"
+    formControlName="num_guests"
+  />
+
+  <label for="destination">Destination</label>
+  <select
+    id="destination"
+    name="destination"
+    formControlName="destination"
+  >
+    <option>Where are you going?</option>
+    <option *ngFor="let destination of destinations" [value]="destination.destination">{{destination.destination}}</option>
+  </select>
+
+  <button type="submit">Submit</button>
 </form>
