@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TripInterface } from '../app.component';
+import { ITrip } from '../app.component';
 
 @Component({
   selector: 'trip-dashboard',
@@ -9,7 +9,7 @@ import { TripInterface } from '../app.component';
 export class TripDashboardComponent implements OnInit {
   constructor() { }
 
-  @Input() trips: TripInterface[] = [];
+  @Input() trips: ITrip[] = [];
 
   ngOnInit(): void {}
 

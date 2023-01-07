@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface TripInterface {
+export interface ITrip {
   date: string,
   destinationId: number,
   duration: number,
@@ -22,14 +22,14 @@ export class AppComponent implements OnInit {
     name: 'Marijo MacNeilley',
     travelerType: 'photographer'
   };
-  trips: TripInterface[] = [];
+  trips: ITrip[] = [];
   spend = '$0.00';
 
   ngOnInit() {
     fetch('http://localhost:3001/api/v1/trips').then(response => response.json()).then(data => this.trips = data.trips).then(() => this.getMyTrips(this.trips))
   }
 
-  getMyTrips(trips: TripInterface[]) {
+  getMyTrips(trips: ITrip[]) {
     const myTrips = trips.filter(trip => this.traveler.id === trip.userID)
     this.trips = myTrips
 
