@@ -11,7 +11,7 @@ interface DestinationInterface {
 }
 
 @Component({
-  selector: 'app-booking-form',
+  selector: 'booking-form',
   templateUrl: './booking-form.component.html',
   styleUrls: ['./booking-form.component.scss']
 })
