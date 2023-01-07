@@ -30,8 +30,13 @@ export class BookingFormComponent implements OnInit {
     fetch('http://localhost:3001/api/v1/destinations').then(response => response.json()).then(data => this.destinations = data.destinations)
   }
 
-  onSubmit(e: Event) {
+  onSubmit(e: Event): void {
     e.preventDefault();
     console.log(this.bookingForm.value)
+    this.clearForm();
+  }
+
+  clearForm(): void {
+    this.bookingForm.reset();
   }
 }
