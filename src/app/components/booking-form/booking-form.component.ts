@@ -20,17 +20,18 @@ export class BookingFormComponent implements OnInit {
 
   destinations: DestinationInterface[] = [];
   bookingForm: FormGroup = this.formBuilder.group({
-    startDate: [''],
-    duration: [null],
-    num_guests: [null],
-    destination: ['']
+    startDate: ['', Validators.required],
+    duration: [null, Validators.required],
+    num_guests: [null, Validators.required],
+    destination: ['', Validators.required]
   });
 
   ngOnInit() {
     fetch('http://localhost:3001/api/v1/destinations').then(response => response.json()).then(data => this.destinations = data.destinations)
   }
 
-  onSubmit() {
+  onSubmit(e: Event) {
+    e.preventDefault();
     console.log(this.bookingForm.value)
   }
 }
