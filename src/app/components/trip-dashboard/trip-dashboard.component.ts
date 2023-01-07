@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ITrip } from '../app.component';
+import { ITrip } from '../../app.component';
 
 @Component({
   selector: 'trip-dashboard',

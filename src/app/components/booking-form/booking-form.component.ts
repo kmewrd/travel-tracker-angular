@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-interface DestinationInterface {
+export interface IDestination {
   id: number,
   destination: string,
   estimatedLodgingCostPerDay: number,
@@ -18,7 +18,7 @@ interface DestinationInterface {
 export class BookingFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
-  destinations: DestinationInterface[] = [];
+  destinations: IDestination[] = [];
   bookingForm: FormGroup = this.formBuilder.group({
     startDate: ['', Validators.required],
     duration: [null, Validators.required],
