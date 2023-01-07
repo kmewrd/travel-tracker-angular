@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-interface TripInterface {
+export interface TripInterface {
   date: string,
   destinationId: number,
   duration: number,

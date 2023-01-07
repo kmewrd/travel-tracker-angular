@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TripInterface } from '../app.component';
 
 @Component({
   selector: 'trip-dashboard',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TripDashboardComponent implements OnInit {
   constructor() { }
+
+  @Input() trips: TripInterface[] = [];
 
   ngOnInit(): void {}
 
